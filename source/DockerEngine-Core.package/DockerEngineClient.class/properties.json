@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "OpenApiClient",
+	"category" : "DockerEngine-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"baseUri"
+	],
+	"name" : "DockerEngineClient",
+	"type" : "normal"
+}
