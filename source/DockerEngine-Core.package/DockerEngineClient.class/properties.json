@@ -2,7 +2,9 @@
 	"commentStamp" : "",
 	"super" : "OpenApiClient",
 	"category" : "DockerEngine-Core",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"current"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
