@@ -1,11 +1,24 @@
 requests
 call: aString withArguments: aCollection
-	| operation response |
-	aCollection ifNotEmpty: [ self halt ].
+	| operation response path uri queries |
 	operation := openApi operationWithId: aString.
+	path :=  operation path.
+	aCollection do: [ :assoc | | param |
+		param := operation parameterWithName: assoc key.
+		(param isKindOf: OAPathParameterLocation) ifTrue: [ 
+			path := path format: { param name -> assoc value }  ]
+		 ].
+	queries := Dictionary new.
+	aCollection do: [ :assoc | | param |
+		param := operation parameterWithName: assoc key.
+		(param isKindOf: OAQueryParameterLocation) ifTrue: [ 
+			queries add: (param name -> assoc value) ]
+		 ].
+	uri := self baseUri / path.
+	uri queryAddAll: queries.
 	response := ZnClient new
-		url: self baseUri / operation path;
-		method: operation method asUppercase ;
+		url: uri;
+		method: operation method asUppercase;
 		execute;
 		response.
 	^ operation handleResponse: response.
