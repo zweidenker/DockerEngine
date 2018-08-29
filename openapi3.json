@@ -14121,11 +14121,9 @@
             "type": "object",
             "properties": {
               "Limits": {
-                "description": "Define resources limits.",
                 "$ref": "#/components/schemas/ResourceObject"
               },
               "Reservation": {
-                "description": "Define resources reservation.",
                 "$ref": "#/components/schemas/ResourceObject"
               }
             }
