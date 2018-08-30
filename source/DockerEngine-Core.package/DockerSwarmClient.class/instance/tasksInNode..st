@@ -1,6 +1,10 @@
 as yet unclassified
-tasksInNode: id
-	^ self
+tasksInNode: node
+	^ (self
 		call: 'TaskList'
 		withArguments: {
-			#filters -> ('{"node":["', id asString,'"],"desired-state":["running"]}') }
+			#filters -> ('{"node":["', node id asString,'"],"desired-state":["running"]}') })
+			collect: [ :each | 
+				DockerSwarmTask new
+					client: self;
+					json: each ]

@@ -1,5 +1,9 @@
 as yet unclassified
 nodes
-	^ self
+	^ (self
 		call: 'NodeList'
-		withArguments: { }
+		withArguments: { })
+			collect: [ :each | 
+				DockerSwarmNode new 
+					client: self;
+					json: each ]
