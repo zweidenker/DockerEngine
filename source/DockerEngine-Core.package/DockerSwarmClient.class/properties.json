@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "DockerEngineClient",
+	"category" : "DockerEngine-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DockerSwarmClient",
+	"type" : "normal"
+}
