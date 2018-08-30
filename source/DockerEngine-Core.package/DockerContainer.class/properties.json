@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"node"
-	],
-	"name" : "DockerSwarmTask",
+	"instvars" : [ ],
+	"name" : "DockerContainer",
 	"type" : "normal"
 }

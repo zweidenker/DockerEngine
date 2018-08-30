@@ -1,6 +1,8 @@
 as yet unclassified
 containerWithId: aString 
-	^ self
+	^ DockerContainer new
+		client: self;
+		json: (self
 		call: 'ContainerInspect'
 		withArguments: {
-			#id -> aString }
+			#id -> aString })

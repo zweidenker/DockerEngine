@@ -7,4 +7,5 @@ tasksInNode: node
 			collect: [ :each | 
 				DockerSwarmTask new
 					client: self;
+					node: node;
 					json: each ]
