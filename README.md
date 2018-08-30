@@ -1,6 +1,6 @@
 # DockerEngine
 
-This is implemented using Docker Engine API 1.35 yaml file from
+This is implemented using Docker Engine API yaml file from
 
 https://docs.docker.com/engine/api/v1.37/#
 
