@@ -5,13 +5,13 @@ call: aString withArguments: aCollection
 	path :=  operation path.
 	aCollection do: [ :assoc | | param |
 		param := operation parameterWithName: assoc key.
-		(param isKindOf: OAPathParameterLocation) ifTrue: [ 
-			path := path format: { param name -> assoc value }  ]
+		(param location isKindOf: OAPathParameterLocation) ifTrue: [ 
+			path := path format: { param name -> assoc value } asDictionary  ]
 		 ].
 	queries := Dictionary new.
 	aCollection do: [ :assoc | | param |
 		param := operation parameterWithName: assoc key.
-		(param isKindOf: OAQueryParameterLocation) ifTrue: [ 
+		(param location isKindOf: OAQueryParameterLocation) ifTrue: [ 
 			queries add: (param name -> assoc value) ]
 		 ].
 	uri := self baseUri / path.
